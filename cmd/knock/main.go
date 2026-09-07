@@ -16,7 +16,7 @@ import (
 	"github.com/ph-py/knock-go/internal/service"
 )
 
-const version = "0.8"
+var version = "1.0.0"
 
 func printUsage() {
 	fmt.Println("usage: knock [options] <host> <port[:proto]> [port[:proto]] ...")
