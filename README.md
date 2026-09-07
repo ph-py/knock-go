@@ -158,8 +158,3 @@ Com contribuições ao longo dos anos por (conforme arquivo `CONTRIBUTERS`):
 O código original está sob a licença **GNU General Public License v2.0 or later** ([COPYING](file:///c:/Users/ph_ol/source/repos/knock-win/knock-win/COPYING)).
 
 Como este projeto é um trabalho derivado / refatoração de código original sob GPLv2+, o seu fork deve ser distribuído sob a **GNU General Public License v2.0** (ou **GPLv3**, conforme permitido pela cláusula *"either version 2 of the License, or (at your option) any later version"*).
-
-Ao criar o seu fork:
-1. Mantenha o arquivo `COPYING` existente.
-2. Adicione sua identificação de copyright no cabeçalho dos arquivos modificados/criados (exemplo: `Copyright (C) 2026 Seu Nome`).
-3. Mantenha os créditos ao autor original e contribuidores.
