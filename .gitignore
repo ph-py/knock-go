@@ -1,22 +1,21 @@
-*.o
+# Binaries and build artifacts
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Project documentation / plans
+walkthrough.md
+implementation_plan.md
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+*.swp
 *~
-.deps
-.dirstamp
-/Makefile
-/Makefile.in
-/aclocal.m4
-/autom4te.cache/
-/compile
-/config.h
-/config.h.in
-/config.log
-/config.status
-/configure
-/depcomp
-/doc/*.1
-/install-sh
-/knock
-/knock-*.tar.*
-/knockd
-/missing
-/stamp-h1
+.idea/
+.vscode/
