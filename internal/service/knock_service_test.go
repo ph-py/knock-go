@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/knock-win/knock/internal/adapters/cli"
-	"github.com/knock-win/knock/internal/adapters/network"
-	"github.com/knock-win/knock/internal/bootstrap"
-	"github.com/knock-win/knock/internal/domain"
-	"github.com/knock-win/knock/internal/service"
+	"github.com/ph-py/knock-go/internal/adapters/cli"
+	"github.com/ph-py/knock-go/internal/adapters/network"
+	"github.com/ph-py/knock-go/internal/bootstrap"
+	"github.com/ph-py/knock-go/internal/domain"
+	"github.com/ph-py/knock-go/internal/service"
 )
 
 func TestExecuteKnockSequenceSuccessInHighGear(t *testing.T) {

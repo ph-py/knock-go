@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/knock-win/knock/internal/domain"
-	"github.com/knock-win/knock/internal/ports"
+	"github.com/ph-py/knock-go/internal/domain"
+	"github.com/ph-py/knock-go/internal/ports"
 )
 
 // MetricCallback é um callback para registrar métricas de telemetria ou logging.

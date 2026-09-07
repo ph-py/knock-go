@@ -5,7 +5,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/knock-win/knock/internal/domain"
+	"github.com/ph-py/knock-go/internal/domain"
 )
 
 // HitStrategy é a interface do Strategy Pattern para transmissão de pacotes em diferentes protocolos.

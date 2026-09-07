@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/knock-win/knock/internal/domain"
+	"github.com/ph-py/knock-go/internal/domain"
 )
 
 // ExecuteKnockSequenceCommand é o comando de caso de uso para orquestrar

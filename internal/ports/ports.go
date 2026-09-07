@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/knock-win/knock/internal/domain"
+	"github.com/ph-py/knock-go/internal/domain"
 )
 
 // Knocker é a porta (interface) para o envio de batidas de rede aos alvos.

@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/knock-win/knock/internal/adapters/builder"
-	"github.com/knock-win/knock/internal/domain"
+	"github.com/ph-py/knock-go/internal/adapters/builder"
+	"github.com/ph-py/knock-go/internal/domain"
 )
 
 func TestKnockSequenceBuilder(t *testing.T) {

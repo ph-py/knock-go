@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/knock-win/knock/internal/domain"
+	"github.com/ph-py/knock-go/internal/domain"
 )
 
 // CommandHandlerFunc é o tipo da função que processa um comando.

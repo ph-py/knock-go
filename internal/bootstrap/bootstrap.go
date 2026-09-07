@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/knock-win/knock/internal/adapters/cli"
-	"github.com/knock-win/knock/internal/adapters/network"
-	"github.com/knock-win/knock/internal/domain"
-	"github.com/knock-win/knock/internal/ports"
-	"github.com/knock-win/knock/internal/service"
+	"github.com/ph-py/knock-go/internal/adapters/cli"
+	"github.com/ph-py/knock-go/internal/adapters/network"
+	"github.com/ph-py/knock-go/internal/domain"
+	"github.com/ph-py/knock-go/internal/ports"
+	"github.com/ph-py/knock-go/internal/service"
 )
 
 // Application é o ponto de contato do Composition Root (Bootstrap),

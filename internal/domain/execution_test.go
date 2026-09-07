@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/knock-win/knock/internal/domain"
+	"github.com/ph-py/knock-go/internal/domain"
 )
 
 func TestKnockExecutionLifecycle(t *testing.T) {

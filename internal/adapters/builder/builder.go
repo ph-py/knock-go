@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/knock-win/knock/internal/domain"
+	"github.com/ph-py/knock-go/internal/domain"
 )
 
 // KnockSequenceBuilder implementa o Builder Pattern para construir

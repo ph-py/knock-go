@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/knock-win/knock/internal/domain"
-	"github.com/knock-win/knock/internal/ports"
+	"github.com/ph-py/knock-go/internal/domain"
+	"github.com/ph-py/knock-go/internal/ports"
 )
 
 // RealSleeper implementa a porta ports.Sleeper usando o relógio real do sistema.

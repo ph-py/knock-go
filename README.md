@@ -41,6 +41,17 @@ O projeto original `knock` foi desenvolvido para sistemas Unix/Linux com depend�
 ### Pré-requisitos
 - **Go 1.22** ou superior instalado no sistema.
 
+### Obter o Projeto
+```bash
+git clone https://github.com/ph-py/knock-go.git
+cd knock-go
+```
+
+Ou instalar diretamente o binário com:
+```bash
+go install github.com/ph-py/knock-go/cmd/knock@latest
+```
+
 ### Compilação Nativa
 
 #### No Windows (PowerShell / CMD)
@@ -155,6 +166,6 @@ Com contribuições ao longo dos anos por (conforme arquivo `CONTRIBUTERS`):
 - E os colaboradores da comunidade open source.
 
 ### Licenciamento do Fork
-O código original está sob a licença **GNU General Public License v2.0 or later** ([COPYING](file:///c:/Users/ph_ol/source/repos/knock-win/knock-win/COPYING)).
+O código original está sob a licença **GNU General Public License v2.0 or later** ([COPYING](COPYING)).
 
 Como este projeto é um trabalho derivado / refatoração de código original sob GPLv2+, o seu fork deve ser distribuído sob a **GNU General Public License v2.0** (ou **GPLv3**, conforme permitido pela cláusula *"either version 2 of the License, or (at your option) any later version"*).

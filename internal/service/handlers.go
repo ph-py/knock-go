@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/knock-win/knock/internal/domain"
-	"github.com/knock-win/knock/internal/ports"
+	"github.com/ph-py/knock-go/internal/domain"
+	"github.com/ph-py/knock-go/internal/ports"
 )
 
 // KnockService centraliza os casos de uso do serviço de port knocking.

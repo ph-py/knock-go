@@ -7,7 +7,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/knock-win/knock/internal/ports"
+	"github.com/ph-py/knock-go/internal/ports"
 )
 
 // ConsolePrinter implementa a porta ports.Printer enviando saída para Stdout e Stderr.

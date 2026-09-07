@@ -6,8 +6,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/knock-win/knock/internal/domain"
-	"github.com/knock-win/knock/internal/ports"
+	"github.com/ph-py/knock-go/internal/domain"
+	"github.com/ph-py/knock-go/internal/ports"
 )
 
 // NetKnocker é o adaptador real de rede que implementa ports.Knocker.
