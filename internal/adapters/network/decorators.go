@@ -25,6 +25,10 @@ func NewLoggingKnockerDecorator(inner ports.Knocker, onKnock MetricCallback) *Lo
 	}
 }
 
+func (d *LoggingKnockerDecorator) Resolve(ctx context.Context, host string, ipVer domain.IPVersion) (string, error) {
+	return d.inner.Resolve(ctx, host, ipVer)
+}
+
 func (d *LoggingKnockerDecorator) Hit(ctx context.Context, target domain.KnockTarget, ipVer domain.IPVersion) (*domain.HitResult, error) {
 	start := time.Now()
 	res, err := d.inner.Hit(ctx, target, ipVer)

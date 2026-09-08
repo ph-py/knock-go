@@ -16,7 +16,7 @@ import (
 	"github.com/ph-py/knock-go/internal/service"
 )
 
-var version = "1.0.0"
+var version = "1.0.1"
 
 func printUsage() {
 	fmt.Println("usage: knock [options] <host> <port[:proto]> [port[:proto]] ...")
@@ -25,7 +25,8 @@ func printUsage() {
 	fmt.Println("  -d, --delay <t>      wait <t> milliseconds between port hits")
 	fmt.Println("  -4, --ipv4           Force usage of IPv4")
 	fmt.Println("  -6, --ipv6           Force usage of IPv6")
-	fmt.Println("  -v, --verbose        be verbose")
+	fmt.Println("  -v, --verbose        be verbose (enabled by default)")
+	fmt.Println("  -q, --quiet          suppress output")
 	fmt.Println("  -V, --version        display version")
 	fmt.Println("  -h, --help           this help")
 	fmt.Println()
@@ -51,6 +52,7 @@ type cliOptions struct {
 
 func parseArgs(args []string) (*cliOptions, error) {
 	opts := &cliOptions{
+		verbose:   true,
 		delayMs:   0,
 		ipVersion: domain.IPDefault,
 		ports:     make([]string, 0),
@@ -68,6 +70,11 @@ func parseArgs(args []string) (*cliOptions, error) {
 		}
 		if arg == "-v" || arg == "--verbose" {
 			opts.verbose = true
+			i++
+			continue
+		}
+		if arg == "-q" || arg == "--quiet" || arg == "-s" || arg == "--silent" {
+			opts.verbose = false
 			i++
 			continue
 		}

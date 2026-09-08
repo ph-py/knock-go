@@ -23,12 +23,13 @@ O projeto original `knock` foi desenvolvido para sistemas Unix/Linux com depend�
   - Modo padrão com resolução automática de DNS ou uso de IPs diretos.
 - **Controle de Intervalo (Delay)**:
   - Flag `-d/--delay <t>` para aguardar `<t>` milissegundos entre batidas consecutivas.
-- **Saída Detalhada (Verbose)**:
-  - Flag `-v/--verbose` com formatação idêntica à do `knock.c`:
+- **Feedback Visual em Tempo Real (Padrão)**:
+  - Ativo por padrão com status em tempo real e confirmação `OK` em verde:
     ```text
-    hitting tcp 192.168.1.1:7000
-    hitting udp 192.168.1.1:8000
+    hitting tcp 192.168.1.1:7000 ... OK
+    hitting udp 192.168.1.1:8000 ... OK
     ```
+  - Modo silencioso para scripts suportado via flag `-q/--quiet`.
 - **Arquitetura Limpa e Padrões de Projeto**:
   - **Domain-Driven Design (DDD)**: Value Objects (`KnockTarget`, `Port`, `Protocol`, `IPVersion`) e Aggregate Root (`KnockExecution`).
   - **Ports and Adapters (Hexagonal Architecture)**: Interfaces desacopladas (`ports.Knocker`, `ports.Sleeper`, `ports.Printer`) isolando I/O de rede e console.
@@ -120,7 +121,8 @@ knock [options] <host> <port[:proto]> [port[:proto]] ...
 | `-d, --delay <ms>` | Tempo de espera em milissegundos entre cada batida de porta |
 | `-4, --ipv4` | Força a resolução e conexão usando IPv4 |
 | `-6, --ipv6` | Força a resolução e conexão usando IPv6 |
-| `-v, --verbose` | Exibe mensagens detalhadas de cada porta batida |
+| `-v, --verbose` | Exibe mensagens detalhadas (habilitado por padrão) |
+| `-q, --quiet` | Suprime a saída no console (modo silencioso) |
 | `-V, --version` | Exibe a versão do programa |
 | `-h, --help` | Exibe a tela de ajuda |
 

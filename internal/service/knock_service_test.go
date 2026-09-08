@@ -78,12 +78,12 @@ func TestExecuteKnockSequenceSuccessInHighGear(t *testing.T) {
 		}
 	}
 
-	// Verifica saída verbose (Observer pattern formatado igual ao knock.c)
+	// Verifica saída verbose (Observer pattern com hitting e OK verde)
 	output := bufferPrinter.String()
 	expectedLines := []string{
-		"hitting tcp 192.168.1.100:7000",
-		"hitting udp 192.168.1.100:8000",
-		"hitting tcp 192.168.1.100:9000",
+		"hitting tcp 192.168.1.100:7000 ... \033[1;32mOK\033[0m",
+		"hitting udp 192.168.1.100:8000 ... \033[1;32mOK\033[0m",
+		"hitting tcp 192.168.1.100:9000 ... \033[1;32mOK\033[0m",
 	}
 	for _, expected := range expectedLines {
 		if !strings.Contains(output, expected) {
@@ -125,6 +125,10 @@ func TestExecuteKnockSequenceFailureInHighGear(t *testing.T) {
 	}
 	if !errors.Is(err, expectedErr) {
 		t.Errorf("expected wrapped error containing %v, got %v", expectedErr, err)
+	}
+
+	if !strings.Contains(bufferPrinter.String(), "\033[1;31mFAIL\033[0m") {
+		t.Errorf("expected output to contain FAIL, got: %q", bufferPrinter.String())
 	}
 }
 

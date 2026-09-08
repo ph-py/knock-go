@@ -44,6 +44,29 @@ func (e KnockStartedEvent) EventName() string {
 	return "KnockStartedEvent"
 }
 
+// PortKnockStartedEvent é emitido imediatamente antes de disparar o pacote para a porta.
+type PortKnockStartedEvent struct {
+	baseEvent
+	Target     KnockTarget
+	ResolvedIP string
+	Step       int
+	TotalSteps int
+}
+
+func NewPortKnockStartedEvent(target KnockTarget, resolvedIP string, step, totalSteps int) PortKnockStartedEvent {
+	return PortKnockStartedEvent{
+		baseEvent:  newBaseEvent(),
+		Target:     target,
+		ResolvedIP: resolvedIP,
+		Step:       step,
+		TotalSteps: totalSteps,
+	}
+}
+
+func (e PortKnockStartedEvent) EventName() string {
+	return "PortKnockStartedEvent"
+}
+
 // PortKnockedEvent é emitido após cada tentativa de batida em uma porta específica.
 type PortKnockedEvent struct {
 	baseEvent

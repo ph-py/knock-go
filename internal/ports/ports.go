@@ -10,6 +10,7 @@ import (
 // Knocker é a porta (interface) para o envio de batidas de rede aos alvos.
 // Permite que a camada de serviço desacople completamente de sockets e SO.
 type Knocker interface {
+	Resolve(ctx context.Context, host string, ipVer domain.IPVersion) (string, error)
 	Hit(ctx context.Context, target domain.KnockTarget, ipVer domain.IPVersion) (*domain.HitResult, error)
 }
 

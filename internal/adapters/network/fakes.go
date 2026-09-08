@@ -30,10 +30,11 @@ var _ ports.Sleeper = (*RealSleeper)(nil)
 // FakeKnocker é um dublê de teste (Fake/Spy) que simula o comportamento
 // de envio de pacotes em memória para testes unitários determinísticos e rápidos.
 type FakeKnocker struct {
-	mu           sync.Mutex
-	RecordedHits []domain.KnockTarget
-	FixedIP      string
-	ErrToReturn  error
+	mu                   sync.Mutex
+	RecordedHits         []domain.KnockTarget
+	FixedIP              string
+	ErrToReturn          error
+	ErrToReturnOnResolve error
 }
 
 func NewFakeKnocker() *FakeKnocker {
@@ -41,6 +42,16 @@ func NewFakeKnocker() *FakeKnocker {
 		RecordedHits: make([]domain.KnockTarget, 0),
 		FixedIP:      "192.168.1.100",
 	}
+}
+
+func (f *FakeKnocker) Resolve(ctx context.Context, host string, ipVer domain.IPVersion) (string, error) {
+	f.mu.Lock()
+	defer f.mu.Unlock()
+
+	if f.ErrToReturnOnResolve != nil {
+		return "", f.ErrToReturnOnResolve
+	}
+	return f.FixedIP, nil
 }
 
 func (f *FakeKnocker) Hit(ctx context.Context, target domain.KnockTarget, ipVer domain.IPVersion) (*domain.HitResult, error) {

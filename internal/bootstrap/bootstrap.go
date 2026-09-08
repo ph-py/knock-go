@@ -58,7 +58,9 @@ func Bootstrap(cfg Config) *Application {
 	// Se o modo verbose estiver ativo, registra o ouvinte de eventos (Observer Pattern)
 	if cfg.Verbose {
 		verboseHandler := service.NewVerboseOutputEventHandler(cfg.Printer)
+		bus.RegisterEventHandler(domain.PortKnockStartedEvent{}, verboseHandler.Handle)
 		bus.RegisterEventHandler(domain.PortKnockedEvent{}, verboseHandler.Handle)
+		bus.RegisterEventHandler(domain.KnockFailedEvent{}, verboseHandler.Handle)
 	}
 
 	return &Application{

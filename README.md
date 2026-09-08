@@ -23,12 +23,13 @@ The original `knock` project was built for Unix/Linux systems with C library dep
   - Default mode supporting automatic DNS resolution and direct IP addresses.
 - **Interval Control (Delay)**:
   - `-d/--delay <t>` flag to wait `<t>` milliseconds between consecutive port hits.
-- **Verbose Output**:
-  - `-v/--verbose` flag formatted identically to `knock.c`:
+- **Real-Time Visual Feedback (Default)**:
+  - Enabled by default with live status and green `OK` confirmation:
     ```text
-    hitting tcp 192.168.1.1:7000
-    hitting udp 192.168.1.1:8000
+    hitting tcp 192.168.1.1:7000 ... OK
+    hitting udp 192.168.1.1:8000 ... OK
     ```
+  - Silent/scripting mode supported via `-q/--quiet`.
 - **Clean Architecture and Design Patterns**:
   - **Domain-Driven Design (DDD)**: Value Objects (`KnockTarget`, `Port`, `Protocol`, `IPVersion`) and Aggregate Root (`KnockExecution`).
   - **Ports and Adapters (Hexagonal Architecture)**: Decoupled interfaces (`ports.Knocker`, `ports.Sleeper`, `ports.Printer`) isolating network and console I/O.
@@ -120,7 +121,8 @@ knock [options] <host> <port[:proto]> [port[:proto]] ...
 | `-d, --delay <ms>` | Wait `<ms>` milliseconds between each port hit |
 | `-4, --ipv4` | Force IPv4 resolution and connection |
 | `-6, --ipv6` | Force IPv6 resolution and connection |
-| `-v, --verbose` | Show verbose status messages for each hit |
+| `-v, --verbose` | Show verbose status messages (enabled by default) |
+| `-q, --quiet` | Suppress output (silent mode) |
 | `-V, --version` | Display program version |
 | `-h, --help` | Display help screen |
 

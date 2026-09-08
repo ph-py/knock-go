@@ -100,6 +100,24 @@ func (e *KnockExecution) Start(targetHost string) error {
 	return nil
 }
 
+// StartHit registra o início do envio do pacote para uma porta e emite PortKnockStartedEvent.
+func (e *KnockExecution) StartHit(target KnockTarget, resolvedIP string) error {
+	e.mu.Lock()
+	defer e.mu.Unlock()
+
+	if e.state != StateRunning {
+		return ErrExecutionNotRunning
+	}
+
+	e.events = append(e.events, NewPortKnockStartedEvent(
+		target,
+		resolvedIP,
+		e.currentStep+1,
+		len(e.sequence.Targets),
+	))
+	return nil
+}
+
 // RecordHit registra o sucesso de uma batida em porta e avança o passo da execução.
 func (e *KnockExecution) RecordHit(result HitResult) error {
 	e.mu.Lock()

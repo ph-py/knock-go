@@ -26,6 +26,10 @@ func NewNetKnocker(tcpStrategy HitStrategy, udpStrategy HitStrategy) *NetKnocker
 	}
 }
 
+func (k *NetKnocker) Resolve(ctx context.Context, host string, ipVer domain.IPVersion) (string, error) {
+	return k.resolveIP(ctx, host, ipVer)
+}
+
 func (k *NetKnocker) resolveIP(ctx context.Context, host string, ipVer domain.IPVersion) (string, error) {
 	// Se já for um IP literal
 	if parsed := net.ParseIP(host); parsed != nil {
